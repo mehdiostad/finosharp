@@ -31,7 +31,7 @@ const Chart = () => {
     };
     if (!chartRef.current) return; // Wait for the reference to be available
 
-    // Create the chart immediately, setting the state variable
+    
     const newChart = createChart(chartRef.current, chartOptions);
 
     setChart(newChart);
@@ -41,7 +41,7 @@ const Chart = () => {
       const data = await fetchKlinesData(selectedInterval);
 
       const formattedData = data.map((item) => ({
-        time: item.openTime, // Assuming openTime is the timestamp in milliseconds
+        time: item.openTime, 
         open: parseFloat(item.open),
         high: parseFloat(item.high),
         low: parseFloat(item.low),
@@ -62,8 +62,8 @@ const Chart = () => {
       }
       setIsLoading(false);
     };
-
-    fetchData(); // Call fetchData immediately after chart creation
+// Call fetchData immediately after chart creation
+    fetchData(); 
 
     const intervalId = setInterval(() => {
       fetchData();
@@ -72,11 +72,11 @@ const Chart = () => {
     return () => {
       clearInterval(intervalId);
       if (newChart) {
-        // Make sure the chart is defined
+        
         newChart.remove();
       }
     };
-  }, [selectedInterval, theme]); // Include selectedInterval to re-fetch data when it changes
+  }, [selectedInterval, theme]); 
 
   return (
     <>
