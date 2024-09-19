@@ -30,7 +30,7 @@ const Navbar = () => {
         </ul>
 
         <Button onClick={toggleDrawer(true)} className="flex lg:hidden">
-          <Image src="/menu.png" alt="menu" width={30} height={50} className="dark:bg-white p-2 rounded-full"/>
+          <Image src="/menu.png" alt="menu" width={30} height={50} className="dark:bg-white p-2 rounded-full lg:hidden flex"/>
         </Button>
         <Drawer open={open} onClose={toggleDrawer(false)}>
           <ul className="flex flex-col gap-10 p-10">
