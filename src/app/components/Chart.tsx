@@ -78,8 +78,6 @@ const Chart = () => {
     };
   }, [selectedInterval, theme]); // Include selectedInterval to re-fetch data when it changes
 
-
-
   return (
     <>
       <div className="flex justify-center items-center">
@@ -98,25 +96,22 @@ const Chart = () => {
         )}
       </div>
 
-     
-<div className="flex w-full gap-4 h-full justify-center items-center">
-  
-<div
-        ref={chartRef}
-        className="flex justify-center items-center h-[80%] w-[80%] "
-      />
-  <Select
-        value={{ value: selectedInterval, label: selectedInterval }}
-        onChange={(selectedOption) => {
-          if (selectedOption) {
-           
-            setSelectedInterval(selectedOption.value as string);
-          }
-        }}
-        options={intervalOptions}
-      />
-</div>
-     
+      <div className="lg:flex lg:flex-row flex-col w-full gap-32 h-full justify-center items-center">
+        <div
+          ref={chartRef} 
+          className="flex justify-center items-center h-[80%] lg:w-[80%] w-full"
+        />
+        <Select
+          value={{ value: selectedInterval, label: selectedInterval }}
+          onChange={(selectedOption) => {
+            if (selectedOption) {
+              setSelectedInterval(selectedOption.value as string);
+            }
+          }}
+          options={intervalOptions}
+          className="dark:text-black overflow-visible"
+        />
+      </div>
     </>
   );
 };

@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 
 const page = () => {
   return (
-    <div className="flex h-screen items-center flex-col dark:bg-black overflow-hidden w-full ">
+    <div className="flex h-screen items-center flex-col dark:bg-black overflow-x-hidden w-full ">
       <Navbar />
       <Chart />
     </div>

@@ -25,12 +25,12 @@ const Navbar = () => {
       <div className="flex gap-4 pr-8 items-center">
         <ul className="flex gap-4 items-center">
           <li>LogIn</li>
-          <li className="p-2 bg-yellow-600 rounded-lg">SingUp</li>
+          <li className="p-2 bg-yellow-600 rounded-lg text-white font-bold">SingUp</li>
           <ModeToggle/>
         </ul>
 
         <Button onClick={toggleDrawer(true)} className="flex lg:hidden">
-          <Image src="/menu.png" alt="menu" width={30} height={50} />
+          <Image src="/menu.png" alt="menu" width={30} height={50} className="dark:bg-white p-2 rounded-full"/>
         </Button>
         <Drawer open={open} onClose={toggleDrawer(false)}>
           <ul className="flex flex-col gap-10 p-10">
